@@ -1,0 +1,58 @@
+---------------------------------------------------
+
+    How to Build and Test
+
+---------------------------------------------------
+
+
+
+1) Clone the repository from: 
+https://github.com/gauravlion/CloudETLPOC/tree/master/src
+
+
+
+2) Open the code in Visual studio code.
+
+
+
+3) To run press F5.
+
+
+
+4) The build process will start and it will create an Endpoint at 
+show the below:
+
+
+Http Functions:
+
+
+        HttpEndPointTrigger: [GET,POST]
+ http://localhost:7071/api/HttpEndPointTrigger
+
+
+
+
+----------------------------
+
+    To Test
+
+----------------------------
+
+
+
+Open any browser and brows
+
+http://localhost:7071/api/HttpEndPointTrigger?name=Test
+
+
+
+
+----------------------------
+
+    OUTPUT
+
+----------------------------
+
+
+
+Hello, Test. This HTTP triggered function executed successfully.
