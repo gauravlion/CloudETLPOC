@@ -42,7 +42,8 @@ Http Functions:
 
 Open any browser and brows
 
-http://localhost:7071/api/HttpEndPointTrigger?name=Test
+http://localhost:7071/api/HttpEndPointTrigger?rowID=4&data=test4
+
 
 
 
