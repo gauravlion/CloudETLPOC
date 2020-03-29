@@ -17,13 +17,23 @@ namespace CloudPOC.Function
             [HttpTrigger(AuthorizationLevel.Anonymous, "get", "post", Route = null)] HttpRequest req,
             ILogger log)
         {
+            string responseMessage = "This HTTP triggered function executed successfully.";
+
             log.LogInformation("C# HTTP trigger function processed a request.");
+            try
+            {
+                var obj = new ETLHelper.TableStorageUtility().MainFlow(req);
 
-            var obj = new ETLHelper.TableStorageUtility().MainFlow(req);
+                log.LogInformation("C# HTTP trigger function executed successfully.");
 
-            log.LogInformation("C# HTTP trigger function executed successfully.");
+                return obj;
+            }
+            catch(Exception ex)
+            {
+                responseMessage = ex.InnerException?.ToString();
+            }
 
-            return obj;
+            return new OkObjectResult(responseMessage);
         }
     }
 }
